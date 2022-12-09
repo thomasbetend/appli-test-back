@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserSpecial{% endblock %}
+
+{% block body %}
+    <h1>UserSpecial</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user_special.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user_special.email }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{{ user_special.roles ? user_special.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ user_special.password }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ user_special.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ user_special.lastname }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_user_special_index') }}">back to list</a>
+
+    <a href="{{ path('app_user_special_edit', {'id': user_special.id}) }}">edit</a>
+
+    {{ include('user_special/_delete_form.html.twig') }}
+{% endblock %}

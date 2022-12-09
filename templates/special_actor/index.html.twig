@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SpecialActor index{% endblock %}
+
+{% block body %}
+    <h1>SpecialActor index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for special_actor in special_actors %}
+            <tr>
+                <td>{{ special_actor.id }}</td>
+                <td>{{ special_actor.firstname }}</td>
+                <td>{{ special_actor.lastname }}</td>
+                <td>
+                    <a href="{{ path('app_special_actor_show', {'id': special_actor.id}) }}">show</a>
+                    <a href="{{ path('app_special_actor_edit', {'id': special_actor.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_special_actor_new') }}">Create new</a>
+{% endblock %}

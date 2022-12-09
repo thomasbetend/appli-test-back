@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="container w-50">
+    <div class="mt-4">
+        <form>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit">Ajoutez une série</button>
+            {{ form_end(form) }}
+        </form>
+    </div>
+</div>
+
+{% endblock %}

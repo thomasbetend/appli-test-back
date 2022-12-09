@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserSpecial index{% endblock %}
+
+{% block body %}
+    <h1>UserSpecial index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Password</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user_special in user_specials %}
+            <tr>
+                <td>{{ user_special.id }}</td>
+                <td>{{ user_special.email }}</td>
+                <td>{{ user_special.roles ? user_special.roles|json_encode : '' }}</td>
+                <td>{{ user_special.password }}</td>
+                <td>{{ user_special.firstname }}</td>
+                <td>{{ user_special.lastname }}</td>
+                <td>
+                    <a href="{{ path('app_user_special_show', {'id': user_special.id}) }}">show</a>
+                    <a href="{{ path('app_user_special_edit', {'id': user_special.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_user_special_new') }}">Create new</a>
+{% endblock %}

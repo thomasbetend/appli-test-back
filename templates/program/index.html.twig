@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}All programs{% endblock %}
+
+{% block body %}
+    <div class = "container w-50">
+        <h1>Toutes les séries </h1>
+        {% for program in programs %}
+            <h2>{{ loop.index }} / {{program.title}} - Catégorie : {{program.category.name}}</h2>
+            <p>{{program.summary}}</p>
+            <a href="/show/{{program.id}}">Détails</a>
+        {% else %}
+            <p>aucun programme trouvé</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}

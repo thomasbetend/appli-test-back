@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SpecialActor{% endblock %}
+
+{% block body %}
+    <h1>Edit SpecialActor</h1>
+
+    {{ include('special_actor/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_special_actor_index') }}">back to list</a>
+
+    {{ include('special_actor/_delete_form.html.twig') }}
+{% endblock %}

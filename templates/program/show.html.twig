@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Programme {{program.id}}{% endblock %}
+
+{% block body %}
+    <h1>{{program.title}} - Catégorie : {{program.category.name}}</h1>
+    <p>{{program.summary}}</p>
+{% endblock %}
+
+

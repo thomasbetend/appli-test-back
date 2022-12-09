@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New SpecialActor{% endblock %}
+
+{% block body %}
+    <h1>Create new SpecialActor</h1>
+
+    {{ include('special_actor/_form.html.twig') }}
+
+    <a href="{{ path('app_special_actor_index') }}">back to list</a>
+{% endblock %}
